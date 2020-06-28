@@ -5,6 +5,11 @@
     "ignore": [
       "firebase.json",
       "**/.*"
-    ]
+    ],
+    "redirects": [ {
+      "source": "/blog/:post*",  
+      "destination": "/:post",
+      "type": 301
+    }]
   }
 }
