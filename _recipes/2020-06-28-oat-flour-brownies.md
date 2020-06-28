@@ -1,6 +1,5 @@
 ---
-name: Jane Doe
-position: Developer
+
 ---
 
 # Oat flour brownies
