@@ -6,7 +6,7 @@
 
 __15/07/2020__
 
-[quiche](https://shusson.info/assets/quiche.jpg)
+![quiche](/assets/quiche.jpg)
 
 ## Ingredients
 - 1 tablespoon butter
