@@ -1,8 +1,8 @@
-# Building nested json objects in postgres
+# Building nested json objects with postgres
 
 __20/09/2020__
 
-If you are using a relational data model, it's often the application layer that will transform normalized data from the db into a hierarchical object. For example many ORMs will support something like `formRepository.find({ relations: ["section", "section.question"] });` which will do something like [this](https://github.com/typeorm/typeorm/blob/c714867d3d0c43ccbb7ca8fb3ce969207e4d5c04/src/query-builder/SelectQueryBuilder.ts#L1926) behind the scenes. Moving the normalized data between the db and the application layer is redundant in space and time. With [json functions](https://www.postgresql.org/docs/12/functions-json.html), postgres can do the transformations instead.
+Often the application layer will transform normalized data from the db into a hierarchical object. For example many ORMs will support something like `formRepository.find({ relations: ["section", "section.question"] });`, which will do something like [this](https://github.com/typeorm/typeorm/blob/c714867d3d0c43ccbb7ca8fb3ce969207e4d5c04/src/query-builder/SelectQueryBuilder.ts#L1926) behind the scenes. Moving the normalized data between the db and the application layer is redundant. With [json functions](https://www.postgresql.org/docs/12/functions-json.html), postgres can do the transformations instead.
 
 Basic model:
 ```sql
