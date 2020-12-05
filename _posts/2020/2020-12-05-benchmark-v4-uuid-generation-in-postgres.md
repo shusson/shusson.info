@@ -39,4 +39,6 @@ EXPLAIN ANALYZE SELECT gen_random_uuid() FROM generate_series(1, 10000);
 
 More investigation is required to determine why `uuid_generate_v4()` is so slow on windows server. It's unclear what underlying lib the enterprisedb postgres is using for `uuid-ossp`. Regardless of why it's slow on windows server, the best option for now is to use `gen_random_uuid` which is significantly faster on all platforms tested and comes built in on postgres 13.
 
+**update**
+
 To be sure the windows issue was not limited to the edb postgres 12.4 version, I did one quick benchmark on the latest edb postgres 13 and found similar execution times for uuid_generate_v4.
