@@ -21,7 +21,7 @@ target group contains a group of EC2 instances.
 You create a target group manually and then can manually attach EC2 instances or
  setup an auto scaling group (think automatic scaling of our app).
 
- ![Load Balancer](assets/alb.png)
+ ![Load Balancer](/assets/alb.jpg)
 
 Before we can set up the load balancer, we'll need to setup a domain and create
 some certs for SSL.
