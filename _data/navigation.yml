@@ -1,7 +1,7 @@
 links:
-- title: Blog
-  url: /
-- title: About
-  url: /about
-- title: Recipes
-  url: /recipes
+  - title: Blog
+    url: /
+  - title: Recipes
+    url: /recipes
+  - title: About
+    url: /about
