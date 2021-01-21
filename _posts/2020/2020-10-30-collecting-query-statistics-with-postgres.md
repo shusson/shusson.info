@@ -1,6 +1,6 @@
 # Collecting query statistics with postgres
 
-__30/10/2020__
+**30/10/2020**
 
 Getting basic insights into query performance is easy with the `pg_stat_statements` module. For applications that use postgres, being able to see min/max/avg query times can help track down non-performing queries that might otherwise be missed by other means. Keep in mind there is a [performance impact](http://pgsnaga.blogspot.com/2011/10/performance-impact-of-pgstatstatements.html) of enabling `pg_stat_statements`.
 
@@ -75,4 +75,10 @@ calls|total  |max    |mean   |query                                             
     1|   5.57|   5.57|   5.57|SELECT t.oid,t.*,c.relkind,format_type(nullif(t.ty|
     1|   3.95|   3.95|   3.95|CREATE TABLE study (¶    id text primary key,¶    |
     2|   3.02|   1.73|   1.51|SELECT x.oid,x.* FROM pg_catalog.pg_proc x WHERE x|
+```
+
+To reset the statistics:
+
+```
+pg_stat_statements_reset();
 ```
