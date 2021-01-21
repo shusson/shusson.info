@@ -9,13 +9,11 @@ Example:
 ```sql
 UPDATE "item"
 SET "updated_at" = CURRENT_TIMESTAMP
-WHERE "item"."group_id" =
-    (
-        SELECT "id"
-        FROM "group"
-        WHERE "group"."name" = $1
-        ORDER BY "id"
-        FOR UPDATE SKIP LOCKED
-        LIMIT 1
-    );
+FROM (
+    SELECT "id"
+    FROM "item"
+    WHERE "item"."name" = $1
+    ORDER BY "id"
+    FOR UPDATE SKIP LOCKED
+) AS x;
 ```
