@@ -7,6 +7,8 @@
 
 ![scroll](/assets/cscroll.jpeg)
 
+Based on https://www.scandikitchen.co.uk/how-to-make-the-best-ever-real-scandi-cinnamon-buns
+
 ## Ingredients
 
 ### Dough
