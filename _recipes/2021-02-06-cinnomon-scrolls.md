@@ -7,13 +7,13 @@
 
 ![scroll](/assets/cscroll.jpeg)
 
-Based on https://www.scandikitchen.co.uk/how-to-make-the-best-ever-real-scandi-cinnamon-buns
+Based on [recipe from scandikitchen](https://www.scandikitchen.co.uk/how-to-make-the-best-ever-real-scandi-cinnamon-buns)
 
 ## Ingredients
 
 ### Dough
 
-- 200g spelt flour
+- 175g spelt flour
 - 50g sourdough starter
 - 100ml cold milk
 - 30g butter melted then cooled a little
