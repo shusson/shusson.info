@@ -11,7 +11,7 @@ Because the default options require admin rights you will most likely always wan
 There are two main output formats for `pg_dump`, sql-scripts or archive file formats. This post will focus on the archive formats since the sql-scripts require a lot of options upfront. For example `--no-owner` or `--create`, will need to specified when you create the dump, which makes the dump a lot less flexible.
 
 ```bash
-PGUSER=postgres PGPASSWORD=<pwd> pg_dump -Fc <database> <path-to-backup>
+PGUSER=postgres PGPASSWORD=<pwd> pg_dump -Fc mydb > backup.dump
 ```
 
 `-Fc` means we use pg_dump's custom format which is also compressed by default.
@@ -19,7 +19,7 @@ PGUSER=postgres PGPASSWORD=<pwd> pg_dump -Fc <database> <path-to-backup>
 Then to restore the backup file:
 
 ```bash
-PGUSER=postgres PGPASSWORD=xxx pg_restore -C -d postgres <path-to-backup>
+PGUSER=postgres PGPASSWORD=xxx pg_restore -C -d postgres > backup.dump
 ```
 
 `-C` tells `pg_restore` to create the database in the dump. It requires that there is no existing database with the same name. If you want to restore into a different database than the one in the dump, rename the db after `pg_restore` has run.
