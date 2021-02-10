@@ -19,7 +19,7 @@ PGUSER=postgres PGPASSWORD=<pwd> pg_dump -Fc mydb > backup.dump
 Then to restore the backup file:
 
 ```bash
-PGUSER=postgres PGPASSWORD=xxx pg_restore -C -d postgres > backup.dump
+PGUSER=postgres PGPASSWORD=xxx pg_restore -C -d postgres backup.dump
 ```
 
 `-C` tells `pg_restore` to create the database in the dump. It requires that there is no existing database with the same name. If you want to restore into a different database than the one in the dump, rename the db after `pg_restore` has run.
