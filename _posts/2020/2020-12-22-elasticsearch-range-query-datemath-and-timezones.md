@@ -84,7 +84,7 @@ curl -XGET "https://<ES_INSTANCE>/<INDEX>/_validate/query?explain=true" -H 'Cont
 
 ES converts the range query to a lower-bound of `1577916000000` and an upper-bound of `9223372036854775807`. We can ignore the upper-bound since it is a hard limit, the lower-bound converts to `2019-12-31T22:00:00Z`.
 
-With some experimentation we can guess what ES is up to. First ES will convert `2020-01-01T00:00:00+0200` to UTC, `2019-12-31T22:00:00Z`. It will then apply the [rounding logic](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-range-query.html#range-query-date-math-rounding) which, since we have `gte`, rounds down to the first millisecond, `2019-12-31T00:00:00Z`. Finally, and most surprisingly to me, ES will use the `time_zone` value to convert the date to `2019-12-31T22:00:00Z`.
+With some experimentation we can guess what ES is up to. First ES will convert `2020-01-01T00:00:00+0200` to UTC, `2019-12-31T22:00:00Z`. It will then apply the [rounding logic](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-range-query.html#range-query-date-math-rounding) which, since we have `gte`, rounds down to the first millisecond, `2019-12-31T00:00:00Z`. Finally, and most surprisingly to me, ES will use the `time_zone` value to convert the date to `2019-12-30T22:00:00Z`.
 
 So if you are going to send the `time_zone` parameter, save yourself a lot of confusion and send date strings without timezone offsets:
 
